@@ -1,0 +1,47 @@
+custom_form.newform:
+  path: '/newform'
+  defaults:
+    _title: 'This is custom form'
+    _form: '\Drupal\custom_form\Form\NewForm'
+  requirements:
+    _permission: 'access content'
+
+
+
+
+// \Drupal::configFactory()->getEditable('core.entity_form_display.node.quiz.default')->delete();
+// \Drupal::configFactory()->getEditable('core.entity_view_display.node.quiz.default')->delete();
+// \Drupal::configFactory()->getEditable('core.entity_view_display.node.quiz.teaser')->delete();
+// \Drupal::configFactory()->getEditable('field.field.node.quiz.body')->delete();
+// \Drupal::configFactory()->getEditable('field.field.node.quiz.field_quiz_board_field')->delete();
+// \Drupal::configFactory()->getEditable('field.field.node.quiz.field_quiz_chapter_field')->delete();
+// \Drupal::configFactory()->getEditable('field.field.node.quiz.field_quiz_class_field')->delete();
+// \Drupal::configFactory()->getEditable('field.field.node.quiz.field_quiz_cognitive_table_field')->delete();
+// \Drupal::configFactory()->getEditable('field.field.node.quiz.field_quiz_concept_field')->delete();
+// \Drupal::configFactory()->getEditable('field.field.node.quiz.field_quiz_duration')->delete();
+// \Drupal::configFactory()->getEditable('field.field.node.quiz.field_quiz_instruction')->delete();
+// \Drupal::configFactory()->getEditable('field.field.node.quiz.field_quiz_learning_objective')->delete();
+// \Drupal::configFactory()->getEditable('field.field.node.quiz.field_quiz_quiz_type')->delete();
+// \Drupal::configFactory()->getEditable('field.field.node.quiz.field_quiz_subject')->delete();
+// \Drupal::configFactory()->getEditable('field.field.node.quiz.field_quiz_text_book')->delete();
+// \Drupal::configFactory()->getEditable('field.storage.node.field_quiz_board_field')->delete();
+// \Drupal::configFactory()->getEditable('field.storage.node.field_quiz_chapter_field')->delete();
+// \Drupal::configFactory()->getEditable('field.storage.node.field_quiz_class_field')->delete();
+// \Drupal::configFactory()->getEditable('field.storage.node.field_quiz_cognitive_table_field')->delete();
+// \Drupal::configFactory()->getEditable('field.storage.node.field_quiz_concept_field')->delete();
+// \Drupal::configFactory()->getEditable('field.storage.node.field_quiz_duration')->delete();
+// \Drupal::configFactory()->getEditable('field.storage.node.field_quiz_instruction')->delete();
+// \Drupal::configFactory()->getEditable('field.storage.node.field_quiz_learning_objective')->delete();
+// \Drupal::configFactory()->getEditable('field.storage.node.field_quiz_quiz_type')->delete();
+// \Drupal::configFactory()->getEditable('field.storage.node.field_quiz_subject')->delete();
+// \Drupal::configFactory()->getEditable('field.storage.node.field_quiz_text_book')->delete();
+// \Drupal::configFactory()->getEditable('node.type.quiz')->delete();
+// \Drupal::configFactory()->getEditable('taxonomy.vocabulary.board_field')->delete();
+// \Drupal::configFactory()->getEditable('taxonomy.vocabulary.chapter_field')->delete();
+// \Drupal::configFactory()->getEditable('taxonomy.vocabulary.class_field')->delete();
+// \Drupal::configFactory()->getEditable('taxonomy.vocabulary.cognitive_table_field')->delete();
+// \Drupal::configFactory()->getEditable('taxonomy.vocabulary.concept_field')->delete();
+// \Drupal::configFactory()->getEditable('taxonomy.vocabulary.learning_objective')->delete();
+// \Drupal::configFactory()->getEditable('taxonomy.vocabulary.quiz_type')->delete();
+// \Drupal::configFactory()->getEditable('taxonomy.vocabulary.subject')->delete();
+// \Drupal::configFactory()->getEditable('taxonomy.vocabulary.text_book')->delete();

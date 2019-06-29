@@ -1,0 +1,16 @@
+custom_block.delete_record:
+  path: '/form-data/{nid}/delete'
+  defaults:
+    _controller: '\Drupal\custom_block\Controller\DeleteController::DeleteRecord'
+    _title: 'Delete Record'
+  requirements:
+    _permission: 'access content'
+
+custom_block.delete_record_form:
+  path: '/form-data-delete/{id}/delete'
+  defaults:
+    _form: '\Drupal\custom_block\Form\DeleteRecordForm'
+    _title: 'Confirm Delete Record'
+  requirements:
+    _permission: 'access content'
+    id: ^\d+$

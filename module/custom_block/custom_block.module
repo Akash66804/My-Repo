@@ -1,0 +1,83 @@
+<?php
+
+/**
+ * @file
+ * Contains custom_block.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_help().
+ */
+function custom_block_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custom_block module.
+    case 'help.page.custom_block':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module will add a custom block.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function custom_block_form_node_article_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+	//Added a name field.
+	$form['name'] = [
+    '#type' => 'textfield',
+    '#title' => t('Your name'),
+    ];
+  $form['actions']['submit']['#submit'][] = 'custom_block_handler';
+}
+
+/**
+ * Implements submit form handler() for .
+ */
+function custom_block_handler($form, $form_state) {
+  drupal_set_message('Method called');
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function custom_block_views_query_alter(\Drupal\views\ViewExecutable $view, Drupal\views\Plugin\views\query\QueryPluginBase $query) {
+  if($view->id() == 'view_page') {
+    foreach ($query->where as &$condition_group) {
+      foreach ($condition_group['conditions'] as &$condition) {
+        if($condition['field'] == 'node__field_city.field_city_target_id = :node__field_city_field_city_target_id') {
+          $condition['value'][':node__field_city_field_city_target_id'] = 4;
+        }
+      }
+    }    
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+ function custom_block_views_pre_render(\Drupal\views\ViewExecutable $view) {
+  if ($view->id() == "view_page") {
+    foreach ($view->result as $key => $value) {
+      if($value->_entity->get('field_mobile')->value == 9898989712) {
+        unset($view->result[$key]);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view_field().
+ */
+// function custom_block_preprocess_views_view_field(&$variables) {
+//   $field = $variables['field'];
+//   if ($field->field == 'text_css_content') {
+//     $result = $field->options['text_css_content'];
+//     $variables['output'] = Drupal\Core\Render\Markup::create($result);
+//   }
+// }

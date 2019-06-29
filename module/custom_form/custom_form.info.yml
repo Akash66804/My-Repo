@@ -1,0 +1,5 @@
+name: 'Form module'
+type: module
+description: 'This module will provide a custom form'
+core: 8.x
+package: 'Custom'
